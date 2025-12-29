@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Land Caller Ecosystem - One Pager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tan: {
+                            400: '#e3cdb0',
+                            500: '#d4b996',
+                            600: '#bfa07a',
+                        },
+                        red: {
+                            950: '#450a0a', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .tech-gradient {
+            background: linear-gradient(135deg, #000000 0%, #7f1d1d 100%);
+        }
+        .text-tan-glow {
+            color: #d4b996;
+            text-shadow: 0 0 10px rgba(212, 185, 150, 0.3);
+        }
+        .most-popular-tag {
+            background-color: #d4b996;
+            color: #171717;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            @page {
+                margin: 0;
+                size: auto;
+            }
+            body {
+                background-color: #0a0a0a !important; /* Force black background */
+                color: #d1d5db !important; /* Force light text */
+            }
+            .no-print {
+                display: none !important;
+            }
+            /* Reset container widths for paper */
+            .max-w-5xl {
+                max-width: 100% !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            /* Remove shadows for cleaner print */
+            .shadow-2xl, .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm {
+                box-shadow: none !important;
+            }
+            /* Hide decorative blurred circles if they cause print artifacts */
+            .blur-3xl, .blur-xl {
+                opacity: 0.1 !important;
+            }
+            /* Ensure gradients print */
+            .bg-gradient-to-br, .tech-gradient {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            /* Stop animations */
+            .animate-pulse {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-gray-300 antialiased">
+
+    <!-- MAIN CONTAINER (Simulates A4/Letter Paper Width) -->
+    <div class="max-w-5xl mx-auto bg-neutral-900 shadow-2xl overflow-hidden my-8 border border-neutral-800 print:my-0 print:shadow-none print:border-none">
+
+        <!-- HEADER -->
+        <header class="bg-neutral-900 border-b border-neutral-800 p-8 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight text-white">THE LAND CALLER <span class="text-red-600">ECOSYSTEM</span></h1>
+                <p class="text-sm font-semibold text-tan-500 tracking-wide mt-1 uppercase">The First All-In-One Acquisition Operating System for Land Investors</p>
+            </div>
+            <!-- Logo Placeholder -->
+            <div class="hidden md:block">
+                <div class="h-12 w-12 bg-gradient-to-br from-red-700 to-red-900 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg border border-red-800/50">LC</div>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="tech-gradient text-white p-12 text-center relative overflow-hidden border-b border-red-900/30">
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h2 class="text-5xl font-extrabold mb-6 leading-tight drop-shadow-lg">Stop Buying Leads.<br>Start Building a Pipeline.</h2>
+                <p class="text-lg text-gray-300 mb-6 font-light">
+                    In 2026, we are retiring the "Agency" model. You no longer have to wait 24 hours for data or manage messy CSV uploads. We are handing you the keys to the machine.
+                </p>
+                <div class="bg-black/40 backdrop-blur-md border border-tan-500/30 p-4 rounded-xl inline-block shadow-2xl">
+                    <span class="font-bold text-tan-500 uppercase text-xs tracking-wider block mb-1">New Concept</span>
+                    <p class="font-semibold text-gray-100">A fully integrated platform combining world-class Cold Calling with Self-Service Data and a Pre-Built CRM.</p>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-red-600 rounded-full opacity-10 blur-3xl mix-blend-screen"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-red-800 rounded-full opacity-20 blur-3xl mix-blend-screen"></div>
+        </section>
+
+        <!-- FEATURES GRID -->
+        <section class="p-10 bg-neutral-900">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- FEATURE 1 -->
+                <div class="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 shadow-lg hover:border-tan-500/50 transition-colors group">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-neutral-900 border border-neutral-700 rounded-lg text-tan-500 mr-3 shadow-inner group-hover:text-tan-400">
+                            <i class="fa-solid fa-database text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">CONTROL</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">Stop slacking us for counts. Enter your criteria (Acreage, Zoning, etc.) and see the <strong>estimated final list size</strong> (post-scrub) instantly.</p>
+                    <ul class="text-sm space-y-2 mb-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Smart Estimates:</strong> Know scrubbed counts <em>before</em> you buy.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Instant Deployment:</strong> Auto-upload to CRM & Dialer.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Zero Wait Time:</strong> Launch a campaign 24/7.</span>
+                        </li>
+                    </ul>
+                    <!-- Mock Map Interface -->
+                    <div class="w-full h-32 bg-neutral-900 rounded-lg border border-neutral-700 relative overflow-hidden group-hover:border-neutral-600 transition-colors">
+                        <!-- Map Background (Grid) -->
+                        <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#555 1px, transparent 1px), linear-gradient(90deg, #555 1px, transparent 1px); background-size: 16px 16px;"></div>
+                        
+                        <!-- Filter Sidebar -->
+                        <div class="absolute top-2 left-2 bottom-2 w-1/4 bg-neutral-800 shadow-md border border-neutral-700 rounded p-1.5 flex flex-col gap-1.5 z-10">
+                            <div class="h-1.5 w-1/2 bg-neutral-600 rounded mb-1"></div>
+                            <!-- Fake Toggles -->
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-sm border border-neutral-600"></div><div class="h-1 w-8 bg-neutral-700 rounded"></div></div>
+                                <div class="flex items-center gap-1"><div class="w-2 h-2 bg-tan-500 rounded-sm"></div><div class="h-1 w-6 bg-neutral-700 rounded"></div></div>
+                                <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-sm border border-neutral-600"></div><div class="h-1 w-8 bg-neutral-700 rounded"></div></div>
+                            </div>
+                            <!-- Action Button -->
+                            <div class="mt-auto h-4 w-full bg-red-700 rounded flex items-center justify-center">
+                                <div class="h-1 w-6 bg-white/50 rounded-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Map Selection Polygon (SVG) -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 128" preserveAspectRatio="none">
+                            <!-- Selected Area -->
+                            <path d="M150,20 L320,10 L360,90 L180,110 Z" fill="rgba(185, 28, 28, 0.1)" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="4 2"/>
+                            <!-- Data Points -->
+                            <circle cx="200" cy="40" r="1.5" fill="#d4b996" />
+                            <circle cx="220" cy="50" r="1.5" fill="#d4b996" />
+                            <circle cx="240" cy="30" r="1.5" fill="#d4b996" />
+                            <circle cx="260" cy="60" r="1.5" fill="#d4b996" />
+                            <circle cx="280" cy="45" r="1.5" fill="#d4b996" />
+                            <circle cx="300" cy="70" r="1.5" fill="#d4b996" />
+                            <circle cx="330" cy="55" r="1.5" fill="#d4b996" />
+                            <circle cx="210" cy="80" r="1.5" fill="#d4b996" />
+                            <circle cx="250" cy="90" r="1.5" fill="#d4b996" />
+                        </svg>
+
+                        <!-- Floating Result Count Badge -->
+                        <div class="absolute top-3 right-3 bg-neutral-800 shadow-md border border-neutral-600 rounded px-2 py-1 flex items-center gap-1.5 z-20">
+                            <div class="w-1.5 h-1.5 bg-tan-500 rounded-full animate-pulse"></div>
+                            <div class="flex flex-col">
+                                <span class="text-[8px] font-bold text-neutral-400 uppercase leading-none mb-0.5">Est. Leads</span>
+                                <span class="text-xs font-bold text-white leading-none">1,242</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FEATURE 2 -->
+                <div class="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 shadow-lg hover:border-tan-500/50 transition-colors group">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-neutral-900 border border-neutral-700 rounded-lg text-tan-500 mr-3 shadow-inner group-hover:text-tan-400">
+                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">INTEGRATION</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-4">We’ve retired the old download-only portal. Every lead is now <strong>pushed instantly</strong> into your interactive Land Caller CRM, ready for immediate action or export.</p>
+                    <ul class="text-sm space-y-2 mb-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Automated Entry:</strong> Leads appear the second the call hangs up.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Universal Access:</strong> Use our CRM or export to yours.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Context Attached:</strong> Recordings & property data included.</span>
+                        </li>
+                    </ul>
+                    <!-- Mock CRM Pipeline -->
+                    <div class="w-full h-32 bg-neutral-900 rounded-lg border border-neutral-700 p-2 flex gap-2 overflow-hidden text-[9px] leading-tight select-none">
+                        
+                        <!-- Column 1: New Leads -->
+                        <div class="flex-1 flex flex-col gap-1.5 min-w-0">
+                            <div class="flex justify-between items-center px-1 text-neutral-500 font-bold uppercase tracking-wider">
+                                <span>New</span>
+                                <span class="bg-neutral-800 text-neutral-400 px-1 rounded text-[8px]">3</span>
+                            </div>
+                            <!-- Card 1 -->
+                            <div class="bg-neutral-800 p-2 rounded shadow-sm border-l-2 border-tan-500 flex flex-col gap-1">
+                                <div class="font-bold text-gray-200 truncate">John Smith</div>
+                                <div class="text-tan-500 font-bold">$12,500</div>
+                                <div class="flex gap-1"><span class="bg-neutral-700 text-neutral-300 px-1 rounded text-[7px] uppercase">Cold Call</span></div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="bg-neutral-800 p-2 rounded shadow-sm border-l-2 border-tan-500 flex flex-col gap-1 opacity-70">
+                                <div class="font-bold text-gray-200 truncate">Sarah Jones</div>
+                                <div class="text-tan-500 font-bold">$8,200</div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Hot Leads -->
+                        <div class="flex-1 flex flex-col gap-1.5 min-w-0 bg-neutral-800/20 rounded p-0.5">
+                            <div class="flex justify-between items-center px-1 text-neutral-500 font-bold uppercase tracking-wider">
+                                <span>Hot</span>
+                                <span class="bg-neutral-800 text-neutral-400 px-1 rounded text-[8px]">1</span>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="bg-neutral-800 p-2 rounded shadow-sm border-l-2 border-red-500 flex flex-col gap-1">
+                                <div class="font-bold text-gray-200 truncate">Mike Ross</div>
+                                <div class="text-tan-500 font-bold">$45,000</div>
+                                <div class="flex gap-1"><span class="bg-red-900/30 text-red-400 px-1 rounded text-[7px] uppercase">Offer Sent</span></div>
+                            </div>
+                        </div>
+
+                         <!-- Column 3: Closing -->
+                         <div class="flex-1 flex flex-col gap-1.5 min-w-0 opacity-80">
+                            <div class="flex justify-between items-center px-1 text-neutral-500 font-bold uppercase tracking-wider">
+                                <span>Closing</span>
+                                <span class="bg-neutral-800 text-neutral-400 px-1 rounded text-[8px]">2</span>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="bg-neutral-800 p-2 rounded shadow-sm border-l-2 border-green-600 flex flex-col gap-1">
+                                <div class="font-bold text-gray-200 truncate">Apex Land Co</div>
+                                <div class="text-tan-500 font-bold">$22,000</div>
+                                <div class="flex gap-1"><span class="bg-green-900/20 text-green-500 px-1 rounded text-[7px] uppercase">Contract</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FEATURE 3 -->
+                <div class="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 shadow-lg hover:border-tan-500/50 transition-colors group">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-neutral-900 border border-neutral-700 rounded-lg text-tan-500 mr-3 shadow-inner group-hover:text-tan-400">
+                            <i class="fa-solid fa-headset text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">PERFORMANCE</h3>
+                    </div>
+                    <!-- Updated Copy for stronger value prop -->
+                    <p class="text-sm text-gray-400 mb-4">We don't just hire agents; we manage them. We police the calls, track the KPIs, and fire underperformers so you don't have to.</p>
+                    <ul class="text-sm space-y-2 mb-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>100% Call Recording:</strong> Total transparency.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Weekly Calibrations:</strong> We fix issues fast.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-tan-500 mt-1 mr-2 shrink-0"></i>
+                            <span><strong>Zero Management:</strong> You get results, not headaches.</span>
+                        </li>
+                    </ul>
+                    <!-- Mock Performance Dashboard -->
+                    <div class="w-full h-32 bg-neutral-900 rounded-lg border border-neutral-700 relative overflow-hidden flex items-center justify-center">
+                        <!-- Decorative Background Waveform -->
+                        <div class="absolute inset-x-0 bottom-0 h-16 flex items-end justify-between px-2 gap-1 opacity-20 pointer-events-none">
+                            <div class="w-1.5 h-4 bg-red-800 rounded-t"></div>
+                            <div class="w-1.5 h-8 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-6 bg-red-800 rounded-t"></div>
+                            <div class="w-1.5 h-10 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-5 bg-red-800 rounded-t"></div>
+                            <div class="w-1.5 h-12 bg-red-600 rounded-t"></div>
+                            <div class="w-1.5 h-8 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-4 bg-red-800 rounded-t"></div>
+                            <div class="w-1.5 h-10 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-6 bg-red-800 rounded-t"></div>
+                             <div class="w-1.5 h-4 bg-red-800 rounded-t"></div>
+                            <div class="w-1.5 h-8 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-6 bg-red-800 rounded-t"></div>
+                            <div class="w-1.5 h-10 bg-red-600 rounded-t"></div>
+                            <div class="w-1.5 h-5 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-12 bg-red-600 rounded-t"></div>
+                            <div class="w-1.5 h-8 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-4 bg-red-800 rounded-t"></div>
+                             <div class="w-1.5 h-10 bg-red-700 rounded-t"></div>
+                            <div class="w-1.5 h-6 bg-red-800 rounded-t"></div>
+                        </div>
+
+                        <!-- Stats Card -->
+                        <div class="bg-neutral-800 shadow-lg border border-neutral-700 rounded-lg p-3 w-3/4 z-10 flex items-center justify-between relative overflow-hidden">
+                            <!-- Glow effect behind image -->
+                            <div class="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-tan-500/20 blur-xl rounded-full"></div>
+                            
+                            <div class="flex items-center gap-3 relative">
+                                <!-- Agent Avatar (Replaced Placeholder) -->
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                         alt="Dedicated Agent" 
+                                         class="w-10 h-10 rounded-full border-2 border-tan-500 object-cover shadow-md filter contrast-125 sepia-[.15]">
+                                    <!-- Online Status Dot -->
+                                    <div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-neutral-800 rounded-full"></div>
+                                </div>
+                                <div>
+                                    <div class="text-[9px] font-bold text-neutral-400 uppercase tracking-wider">Dedicated Agent</div>
+                                    <div class="flex text-tan-500 text-[10px] gap-0.5 mt-0.5">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Divider -->
+                            <div class="w-px h-8 bg-neutral-700/50"></div>
+                            
+                            <!-- Result Stat -->
+                            <div class="text-right">
+                                <div class="text-[9px] font-bold text-neutral-400 uppercase tracking-wider">Avg ROI</div>
+                                <div class="text-sm font-bold text-tan-500 flex items-center justify-end gap-1">
+                                    <i class="fa-solid fa-arrow-trend-up text-[10px]"></i> 3.5x
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARISON TABLE -->
+        <section class="px-10 py-6 bg-neutral-900 border-t border-neutral-800">
+            <h3 class="text-2xl font-bold text-center mb-6 text-white">Why The Upgrade?</h3>
+            <div class="overflow-hidden rounded-lg border border-neutral-800 shadow-sm bg-neutral-800">
+                <table class="min-w-full divide-y divide-neutral-700">
+                    <thead class="bg-neutral-900/50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Feature</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Old Way</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-tan-500 uppercase tracking-wider font-bold">New Way (Ecosystem)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-neutral-700">
+                        <tr>
+                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Data Pulls</td>
+                            <td class="px-6 py-3 text-sm text-neutral-500">Wait 24hrs</td>
+                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-bolt mr-1"></i> Instant Scrubber & Count</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Lead Delivery</td>
+                            <td class="px-6 py-3 text-sm text-neutral-500">Static Portal</td>
+                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-rotate mr-1"></i> Syncs to CRM & Dialer</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Skip Tracing</td>
+                            <td class="px-6 py-3 text-sm text-neutral-500">Paid Separately</td>
+                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-check-circle mr-1"></i> INCLUDED</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Lead Mgmt</td>
+                            <td class="px-6 py-3 text-sm text-neutral-500">Spreadsheets</td>
+                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-table-columns mr-1"></i> Pre-Built CRM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section class="p-10 bg-neutral-900 border-t border-neutral-800">
+            <h3 class="text-3xl font-extrabold text-center mb-8 text-white">Pricing Plans</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                
+                <!-- BASIC PACKAGES -->
+                <div class="relative bg-neutral-800 border border-neutral-700 rounded-2xl p-8 shadow-sm">
+                    <h4 class="text-xl font-bold text-white mb-2">Basic Packages</h4>
+                    <p class="text-sm text-neutral-400 mb-6 font-medium uppercase tracking-wide">Pay-Per-Lead</p>
+                    <p class="text-sm text-neutral-500 mb-6 italic">Ideal for transactional volume.</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center border-b border-neutral-700 pb-2 text-gray-300">
+                            <span>Tier 1 (20 Leads)</span>
+                            <span class="font-bold text-lg text-white">$1,100</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-neutral-700 pb-2 text-gray-300">
+                            <span>Tier 2 (35 Leads)</span>
+                            <span class="font-bold text-lg text-white">$1,850</span>
+                        </li>
+                        <li class="flex justify-between items-center bg-neutral-900/50 p-3 rounded-lg -mx-3 border border-red-900/30">
+                            <span class="font-bold text-red-400">Tier 3 (50 Leads)</span>
+                            <div class="text-right">
+                                <span class="font-bold text-xl text-red-500 block">$2,650</span>
+                                <span class="text-xs text-red-400/70 font-bold uppercase">Most Popular</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ENTERPRISE PARTNERS -->
+                <div class="relative bg-gradient-to-br from-neutral-900 to-red-950 text-white rounded-2xl p-8 shadow-xl transform md:-translate-y-2 border border-red-900/50">
+                    <div class="most-popular-tag">Best Value</div>
+                    <h4 class="text-xl font-bold mb-2">Enterprise Partners</h4>
+                    <p class="text-sm text-tan-500 mb-4 font-medium uppercase tracking-wide">Dedicated Agents + Tech</p>
+                    
+                    <!-- Added Value Stack List -->
+                    <ul class="text-sm text-gray-300 space-y-3 mb-6 border-b border-red-900/30 pb-4">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-user-tie text-tan-500 text-xs mt-1"></i> 
+                            <span>Full-Time Dedicated Agent (40hrs/wk)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-database text-tan-500 text-xs mt-1"></i> 
+                            <span class="leading-tight"><strong>Unlimited Self-Service Dashboard:</strong> Pull, Skip, Scrub & Dial instantly without delay.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-laptop-code text-tan-500 text-xs mt-1"></i> 
+                            <span>Land Caller CRM License Included</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-black/20 p-4 rounded-lg border border-tan-600/50 relative overflow-hidden">
+                            <!-- Subtle glow for the hero price -->
+                            <div class="absolute top-0 right-0 w-20 h-20 bg-tan-500/10 blur-xl rounded-full -mr-10 -mt-10"></div>
+                            
+                            <div class="flex justify-between items-center mb-1 relative z-10">
+                                <span class="font-bold">Annual Plan</span>
+                                <span class="font-bold text-2xl text-tan-500">$2,350<span class="text-sm text-gray-400">/mo</span></span>
+                            </div>
+                            <div class="text-xs text-tan-400 font-semibold relative z-10"><i class="fa-solid fa-gift mr-1"></i> Includes Free Tech Stack</div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center px-2 opacity-80 text-gray-300">
+                            <span>6-Month Plan</span>
+                            <span class="font-bold">$2,595<span class="text-sm font-normal text-gray-500">/mo</span></span>
+                        </div>
+                        <div class="flex justify-between items-center px-2 opacity-80 text-gray-300">
+                            <span>3-Month Plan</span>
+                            <span class="font-bold">$2,850<span class="text-sm font-normal text-gray-500">/mo</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Volume Discount Badge -->
+                    <div class="mt-6 bg-tan-500/10 border border-tan-500/20 rounded-lg p-3 text-center">
+                        <div class="flex items-center justify-center gap-2 text-tan-500 mb-1">
+                            <i class="fa-solid fa-users-viewfinder text-sm"></i>
+                            <span class="text-xs font-bold uppercase tracking-wider">Volume Discount</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Hiring multiple callers? Receive <span class="text-white font-bold">$100 OFF/mo</span> for every additional agent.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION / FOOTER -->
+        <footer class="bg-gradient-to-r from-red-950 to-black text-white text-center p-10 border-t border-red-900">
+            <h3 class="text-2xl font-bold mb-4">Ready to upgrade your acquisition stack?</h3>
+            <div class="mb-6 max-w-3xl mx-auto flex flex-col items-center gap-3">
+                <p class="text-gray-400">
+                    Existing clients can lock in the <strong class="text-tan-500">$2,150 rate</strong> <span class="text-gray-500">(Save $200/mo off list)</span> if you renew before <strong class="text-red-500">Jan 30th</strong>.
+                </p>
+                <!-- Added Scarcity Note -->
+                <p class="text-xs text-red-400 font-semibold uppercase tracking-widest animate-pulse">
+                    <i class="fa-solid fa-triangle-exclamation mr-1"></i> Limited Onboarding Spots Available
+                </p>
+                <div class="mt-2">
+                     <span class="bg-red-900/30 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-800/50 uppercase tracking-wider shadow-lg">
+                        <i class="fa-solid fa-tag mr-1"></i> Save $5,300+/yr
+                    </span>
+                </div>
+            </div>
+            <div class="inline-flex flex-col md:flex-row gap-6 justify-center items-center text-sm font-semibold tracking-wide">
+                <a href="mailto:sales@landcaller.com" class="hover:text-tan-500 transition-colors"><i class="fa-solid fa-envelope mr-2 text-tan-600"></i> sales@landcaller.com</a>
+                <span class="hidden md:block opacity-30 text-tan-600">|</span>
+                <a href="https://www.landcaller.com" class="hover:text-tan-500 transition-colors"><i class="fa-solid fa-globe mr-2 text-tan-600"></i> www.landcaller.com</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
