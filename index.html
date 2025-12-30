@@ -54,6 +54,7 @@
         /* Custom scrollbar for dark theme */
         ::-webkit-scrollbar {
             width: 8px;
+            height: 8px; /* Height for horizontal scrollbar */
         }
         ::-webkit-scrollbar-track {
             background: #171717;
@@ -103,6 +104,13 @@
             .animate-pulse {
                 animation: none !important;
             }
+            /* Ensure table fits on page */
+            table {
+                width: 100% !important;
+            }
+            .overflow-x-auto {
+                overflow: visible !important;
+            }
         }
     </style>
 </head>
@@ -144,7 +152,7 @@
         <section class="p-10 bg-neutral-900">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- FEATURE 1: CONTROL (Restored) -->
+                <!-- FEATURE 1: CONTROL -->
                 <div class="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 shadow-lg hover:border-tan-500/50 transition-colors group">
                     <div class="flex items-center mb-4">
                         <div class="p-3 bg-neutral-900 border border-neutral-700 rounded-lg text-tan-500 mr-3 shadow-inner group-hover:text-tan-400">
@@ -167,7 +175,7 @@
                             <span><strong>Zero Wait Time:</strong> Launch a campaign 24/7.</span>
                         </li>
                     </ul>
-                    <!-- Mock Map Interface (Restored) -->
+                    <!-- Mock Map Interface -->
                     <div class="w-full h-32 bg-neutral-900 rounded-lg border border-neutral-700 relative overflow-hidden group-hover:border-neutral-600 transition-colors">
                         <!-- Map Background (Grid) -->
                         <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#555 1px, transparent 1px), linear-gradient(90deg, #555 1px, transparent 1px); background-size: 16px 16px;"></div>
@@ -214,7 +222,7 @@
                     </div>
                 </div>
 
-                <!-- FEATURE 2: INTEGRATION (With Updates) -->
+                <!-- FEATURE 2: INTEGRATION -->
                 <div class="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 shadow-lg hover:border-tan-500/50 transition-colors group">
                     <div class="flex items-center mb-4">
                         <div class="p-3 bg-neutral-900 border border-neutral-700 rounded-lg text-tan-500 mr-3 shadow-inner group-hover:text-tan-400">
@@ -290,7 +298,7 @@
                     </div>
                 </div>
 
-                <!-- FEATURE 3 -->
+                <!-- FEATURE 3: PERFORMANCE -->
                 <div class="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 shadow-lg hover:border-tan-500/50 transition-colors group">
                     <div class="flex items-center mb-4">
                         <div class="p-3 bg-neutral-900 border border-neutral-700 rounded-lg text-tan-500 mr-3 shadow-inner group-hover:text-tan-400">
@@ -381,46 +389,52 @@
             </div>
         </section>
 
-        <!-- COMPARISON TABLE -->
-        <section class="px-10 py-6 bg-neutral-900 border-t border-neutral-800">
+        <!-- COMPARISON TABLE (Responsive Scroll Fix) -->
+        <section class="px-4 md:px-10 py-6 bg-neutral-900 border-t border-neutral-800">
             <h3 class="text-2xl font-bold text-center mb-6 text-white">Why The Upgrade?</h3>
-            <div class="overflow-hidden rounded-lg border border-neutral-800 shadow-sm bg-neutral-800">
-                <table class="min-w-full divide-y divide-neutral-700">
-                    <thead class="bg-neutral-900/50">
-                        <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Feature</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Old Way</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-tan-500 uppercase tracking-wider font-bold">New Way (Ecosystem)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-neutral-700">
-                        <tr>
-                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Data Speed</td>
-                            <td class="px-6 py-3 text-sm text-neutral-500">Request & Wait 24hrs</td>
-                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-bolt mr-1"></i> Instant Self-Service (Pull, Skip, Scrub)</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Transparency</td>
-                            <td class="px-6 py-3 text-sm text-neutral-500">Blind Estimates</td>
-                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-eye mr-1"></i> See Final Size & Cost <em>Before</em> Purchase</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Flexibility</td>
-                            <td class="px-6 py-3 text-sm text-neutral-500">Restricted Sources</td>
-                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-upload mr-1"></i> Bring Your Own Data (Or Just Scrub/Skip)</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Lead Delivery</td>
-                            <td class="px-6 py-3 text-sm text-neutral-500">Static Portal</td>
-                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-rotate mr-1"></i> Syncs to CRM & Dialer</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-3 text-sm font-medium text-gray-300">Lead Mgmt</td>
-                            <td class="px-6 py-3 text-sm text-neutral-500">Spreadsheets</td>
-                            <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-table-columns mr-1"></i> Pre-Built CRM</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="rounded-lg border border-neutral-800 shadow-sm bg-neutral-800 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-neutral-700 whitespace-nowrap md:whitespace-normal">
+                        <thead class="bg-neutral-900/50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Feature</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-400 uppercase tracking-wider">Old Way</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-tan-500 uppercase tracking-wider font-bold">New Way (Ecosystem)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-neutral-700">
+                            <tr>
+                                <td class="px-6 py-3 text-sm font-medium text-gray-300">Data Speed</td>
+                                <td class="px-6 py-3 text-sm text-neutral-500">Request & Wait 24hrs</td>
+                                <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-bolt mr-1"></i> Instant Self-Service (Pull, Skip, Scrub)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-3 text-sm font-medium text-gray-300">Transparency</td>
+                                <td class="px-6 py-3 text-sm text-neutral-500">Blind Estimates</td>
+                                <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-eye mr-1"></i> See Final Size & Cost <em>Before</em> Purchase</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-3 text-sm font-medium text-gray-300">Flexibility</td>
+                                <td class="px-6 py-3 text-sm text-neutral-500">Restricted Sources</td>
+                                <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-upload mr-1"></i> Bring Your Own Data (Or Just Scrub/Skip)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-3 text-sm font-medium text-gray-300">Lead Delivery</td>
+                                <td class="px-6 py-3 text-sm text-neutral-500">Static Portal</td>
+                                <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-rotate mr-1"></i> Syncs to CRM & Dialer</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-3 text-sm font-medium text-gray-300">Lead Mgmt</td>
+                                <td class="px-6 py-3 text-sm text-neutral-500">Spreadsheets</td>
+                                <td class="px-6 py-3 text-sm font-bold text-tan-500"><i class="fa-solid fa-table-columns mr-1"></i> Pre-Built CRM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Mobile Hint -->
+            <div class="md:hidden text-center mt-2 text-neutral-500 text-xs italic">
+                <i class="fa-solid fa-arrows-left-right mr-1"></i> Swipe table to see more
             </div>
         </section>
 
